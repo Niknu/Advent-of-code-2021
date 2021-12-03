@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python 3
 
 #import sys
 
@@ -15,80 +15,35 @@ def func():
 
     f = open(file_input,'r')
 
-    test = [199,
-    200, 
-    208 ,
-    210 ,
-    200 ,
-    207 ,
-    240 ,
-    269 ,
-    260 ,
-    263 ,]
 
     dataList = f.readlines()
-    data_output = open("output_test.txt",'w')
+    #data_output = open("output_test.txt",'w')
     for x in range(len(dataList)):
         
         
         if data == None:
-            data = dataList[x]
+            data = int(dataList[x],10)
         else:
-            if data < dataList[x]:
+            if data < int(dataList[x],10):
                 counter+=1
-                data = dataList[x]
-                data_output.write(data)
+                data = int(dataList[x],10)
+                #data_output.write(data)
             else:
-                data = dataList[x]
+                data = int(dataList[x],10)
+                
+                
         
-
-        '''
-        print("INPUT= ",test[x],"x= ",x)
-        print("prev number = ",data_test)
-        print("_________________")
-        if data_test == None:
-            data_test = test[x]
-        else:
-            if data_test < test[x]:
-                print(" data_test=",data_test,"test= ",test[x])
-
-                data_test = test[x]
-                counter+=1
-                data_output.write(str(data_test)+'\n')
-            else:
-                data_test = test[x]
-        print("---------------------")
-        '''
         if x+1 > len(dataList)-1:
             break
 
-        if dataList[x] < dataList[x+1]:
+        if int(dataList[x],10) < int(dataList[x+1],10):
             counter_test+=1
 
-    data_output.close()
+    #data_output.close()
 
         
-
-    '''
-    while True:
-        line = f.readline()
-
-
-        if data == None:
-            data = line
-        else:
-            if data < line:
-                counter+=1
-                data = line
-            else:
-                data = line
-
-        
-        if not line:
-            break
-    '''
-    print(counter)
-    print(counter_test)
+    print("counter = ",counter)
+    print("counter_test = ",counter_test)
 
 
 
